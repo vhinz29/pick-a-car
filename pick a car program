@@ -1,0 +1,41 @@
+import string
+
+make = ["chevy", "ford", "toyota", "ferrari","kawasaki"]
+model = ["corvette", "mustang", "gt-one", "aperta", "barako"]
+year = ["2021", "2022", "2022", "2020", "2023"]
+color = ["blue", "red", "gray", "red", "black"]
+car = [make, model, year, color]
+car_no = 1
+query_no = []
+num = 0
+num1 = 0
+print("-----------------------------------------------")
+print("| make ", "    |  model", "     | year", "   | color   |")
+print("-----------------------------------------------")
+for x in range(len(make)):
+    print(f"| {make[x].ljust(10)}| {model[x].ljust(12)}| {year[x].ljust(8)}| {color[x].ljust(8)}|")
+print("-----------------------------------------------")
+
+print("")
+query = str(input("enter a name :> ", ))
+# print(search)
+for x in range(len(car)):
+    for y in range(len(make)):
+        if query == car[x][y]:
+            query_no.append(y)
+if query_no != []:
+    print("Car is Available \n")
+else:
+    print("No Car is Available\n")
+
+for x in range(len(make)):
+    for y in range(len(car)):
+        for z in range(len(query_no)):
+            if x == query_no[z]:
+                print(car[y][x])
+                num1 += 1
+                if num1 == len(car):
+                    print("")
+                    num1 = 0
+
+print("thank you")
